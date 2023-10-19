@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-4xl;
+    @apply text-gray-700;
+    @apply font-bold;
+    @apply mb-6;
+  }
+  a {
+    @apply hover:underline;
+    @apply text-gray-700;
+    @apply font-bold;
+  }
+  p {
+    @apply text-gray-700;
+    @apply mb-4;
+  }
+}
