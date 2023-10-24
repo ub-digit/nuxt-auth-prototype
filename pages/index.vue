@@ -1,6 +1,19 @@
 <template>
   <div>
     <h1>Home</h1>
+
+    <p class="text-red-400" v-if="data.status === 'unauthenticated'">You will need to login to see secret data</p>
+
+
+    <p v-if="data.status === 'authenticated'">
+    <p class="text-blue-800">Secret data</p>
+      <ul v-if="data.data">
+      <li v-for="item in data.data" :key=item.id>
+        {{ item.name }}
+      </li>
+      </ul>
+    </p>
+
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quae
       itaque animi, necessitatibus error quis magni, culpa nulla id voluptates
@@ -27,6 +40,7 @@
 
 <script setup>
 definePageMeta({ auth: false });
+const { data } = useFetch("/api/protected");
 </script>
 
 <style scoped></style>

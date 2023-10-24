@@ -1,14 +1,11 @@
 <template>
-  <section>
+  <section class="md:w-96">
     <div class="border pt-4 pb-8 px-8 rounded-sm">
       <h3 class="text-xl font-bold pb-4">Login</h3>
-
-      <div class="flex">
-        <ProviderLogin
-          v-for="provider in providers"
-          :key="provider.id"
-          :provider-name="provider.name"
-        />
+      <div class="">
+        <LoginGithub />
+        <p class="font-bold pt-5 text-center">- OR -</p>
+        <LoginCredentials />
       </div>
     </div>
   </section>
